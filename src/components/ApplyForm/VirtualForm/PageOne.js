@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import '../applyform.scss';
+import "../applyform.scss";
 
-import '../../../assets/styles/global.scss';
-import { useFormContext } from 'react-hook-form';
+import "../../../assets/styles/global.scss";
+import { useFormContext } from "react-hook-form";
 // import UseFormContext from '../../hooks/useFormContext';
 // import { Button as MuiButton } from '@mui/material';
 // import { styled } from '@mui/system';
@@ -22,75 +22,71 @@ const PageOne = () => {
     <div className="badge_form">
       <div>
         <div className="input-wrapper ">
-          <label htmlFor="eventname">
-            Event name<span>*</span>
-          </label>
+          <label htmlFor="eventname">Event name</label>
           <br /> <br />
           <input
             type="text"
             placeholder="Enter event name"
             id="eventname"
-            name="eventname"
+            name="nameVI"
             aria-required
             required
             className="input_text"
-            {...register('eventname', {
+            {...register("nameVI", {
               required: true,
-              message: 'Please enter valid website',
+              message: "Please enter valid website",
             })}
-          />{' '}
+          />{" "}
           {/* <p className="error">{errors.eventname?.message}</p> */}
           <br />
         </div>
         <div className="input-wrapper ">
-          <label htmlFor="eventWebsite">
-            Link to the event website<span>*</span>
-          </label>{' '}
-          <br /> <br />
+          <label htmlFor="eventWebsite">Link to the event website</label> <br />{" "}
+          <br />
           <input
             type="text"
             placeholder="Enter link to event website"
             className="input_text"
             id="eventWebsite"
-            name="eventWebsite"
+            name="linkwebVI"
             aria-required
             required
-            {...register('evenWebsite', {
+            {...register("linkwebVI", {
               required: true,
-              pattern: {
-                value:
-                  /^(https?:\/\/)?(wwww{1}\.)?[\w\d]*\.([a-zA-Z]*\.)?([a-zA-Z]*)?$/i,
-                message: 'Please enter valid website',
-              },
+              //  pattern: {
+              //   value:
+              //    /^(https?:\/\/)?(wwww{1}\.)?[\w\d]*\.([a-zA-Z]*\.)?([a-zA-Z]*)?$/i,
+              //   message: 'Please enter valid website',
+              //  },
             })}
-          />{' '}
+          />{" "}
           {/* <p className="error">{errors.eventWebsite?.message}</p> */}
           <br />
         </div>
         <div className="radio-input">
-          <p>
-            Are you an organizer of this event?<span>*</span>
-          </p>
-          <label htmlFor="yes">
+          <p>Are you an organizer of this event?</p>
+          <label htmlFor="organizerYes">
             <input
               type="radio"
-              id="yes"
-              name="yes_no"
+              value="Yes"
+              id="organizerYes"
+              name="organizerYes"
               className="radio-input"
               aria-checked
-              {...register('yes_no', { required: true || false })}
+              {...register("organizerVI", { required: true || false })}
             />
             Yes
           </label>
           &nbsp;
-          <label htmlFor="No">
+          <label htmlFor="organizerNo">
             <input
               type="radio"
-              id="no"
-              name="yes_no"
+              value="No"
+              id="organizerNo"
+              name="organizerNo"
               className="radio-input"
               aria-checked
-              {...register('yes_no', { required: true || false })}
+              {...register("organizerVI", { required: true || false })}
             />
             No
           </label>

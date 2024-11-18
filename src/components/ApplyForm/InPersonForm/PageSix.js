@@ -1,13 +1,10 @@
-import '../applyform.scss';
+import "../applyform.scss";
 // import { useNavigate } from 'react-router-dom';
-import '../../../assets/styles/global.scss';
-import { useFormContext } from 'react-hook-form';
-import { carretDown, carretRight } from '../../../assets/images';
+import "../../../assets/styles/global.scss";
+import { useFormContext } from "react-hook-form";
 
-import { useState } from 'react';
 const PageSix = () => {
   const { register } = useFormContext();
-  const [showLink, setShowLink] = useState(false);
 
   // const objectStyle = {
   //   color: 'blue',
@@ -22,110 +19,81 @@ const PageSix = () => {
 
   return (
     <div className="badge_form">
-      <div className="input-wrapper">
-        {' '}
+      <div className="input-wrapper mb-0">
+        {" "}
         <h4>Family Friendliness</h4>
-        <label htmlFor="famCheck">
+        <label className="text-sm" htmlFor="famCheck">
           <input
             type="checkbox"
-            name="famCheck"
+            name="FFIP"
             id="famCheck"
-            {...register('famCheck', { required: true })}
-          />{' '}
-          &nbsp; This event commits to the Diversity Access Tickets.
-        </label>{' '}
+            {...register("FFIP", { required: true })}
+          />{" "}
+          &nbsp; This event commits to Family Friendliness.
+        </label>{" "}
         <br />
-        <button
-          type="button"
-          className="reference"
-          onClick={(e) => {
-            e.preventDefault();
-            setShowLink(!showLink);
-          }}
-        >
-          References
-          {showLink ? (
-            <span id="reft">
-              <img
-                src={carretDown}
-                width={35}
-                height={35}
-                alt="carret-icon"
-                className="carret"
-              />
-            </span>
-          ) : (
-            <span id="reft">
-              <img
-                src={carretRight}
-                width={35}
-                height={35}
-                alt="carret-icon"
-                className="carret"
-              />
-            </span>
-          )}
-        </button>
         <br />
-        {showLink && (
-          <div>
-            <a href="https://chaoss.community/metrics-for-event-organizers/">
-              CHAOSS Metric Document
-            </a>
-          </div>
-        )}
+        <div>
+          <a
+            className="ev-link"
+            href="https://chaoss.community/kb/metric-family-friendliness/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Metric: Family Friendliness
+          </a>
+        </div>
       </div>
 
       <div className="input-wrapper ">
         <label htmlFor="childcare">
           Does the Event provide childcare facilities for its attendees and
-          speakers?<span>*</span>
-        </label>{' '}
+          speakers?
+        </label>{" "}
         <br /> <br />
         <textarea
           className="input_text"
           id="childcare"
           type="text"
-          name="childcare"
+          name="FFIP1"
           placeholder="Enter your answer here"
-          {...register('childcare', { required: true })}
+          {...register("FFIP1", { required: true })}
           rows="6"
           cols="75"
-        />{' '}
+        />{" "}
         <br />
       </div>
       <div className="input-wrapper ">
         <label htmlFor="familyEnviron">
           What are the other ways that a family-friendly environment is being
           created in the Event?
-          <span>*</span>
-        </label>{' '}
+        </label>{" "}
         <br /> <br />
         <textarea
           className="input_text"
           id="familyEnviron"
           type="text"
-          name="familyEnviron"
+          name="FFIP2"
           placeholder="Enter your answer here"
-          {...register('familyEnviron', { required: true })}
+          {...register("FFIP2", { required: true })}
           rows="6"
           cols="75"
-        />{' '}
+        />{" "}
         <br />
       </div>
       <div className="input-wrapper ">
         <label htmlFor="famLink">
-          Provide link for the Event Code of Conduct<span>*</span>
-        </label>{' '}
+          Provide relevant links related to family friendliness at the Event.
+        </label>{" "}
         <br /> <br />
         <input
           type="text"
           placeholder="Enter your answer here"
           className="input_text"
           id="famLink"
-          name="famLink"
-          {...register('famLink', { required: true })}
-        />{' '}
+          name="FFIP3"
+          {...register("FFIP3", { required: true })}
+        />{" "}
         <br />
       </div>
 
@@ -139,13 +107,6 @@ const PageSix = () => {
           <span>Ticket allocation: </span>
           The information about the family friendly services provided at the
           Event is easy to find on the website.
-        </p>
-      </div>
-      <div className="submit-info">
-        <p>
-          {' '}
-          Once you click `submit`, you must use your GitHub account to finalize
-          the issue on their Website by clicking `Create New Issue`.
         </p>
       </div>
     </div>

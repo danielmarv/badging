@@ -1,13 +1,10 @@
 // import { useNavigate } from 'react-router-dom';
-import '../../../assets/styles/global.scss';
-import '../applyform.scss';
-import { useFormContext } from 'react-hook-form';
-import { carretDown, carretRight } from '../../../assets/images';
+import "../../../assets/styles/global.scss";
+import "../applyform.scss";
+import { useFormContext } from "react-hook-form";
 
-import { useState } from 'react';
 const PageFive = () => {
   const { register } = useFormContext();
-  const [showLink, setShowLink] = useState(false);
 
   // const objectStyle = {
   //   color: 'blue',
@@ -22,113 +19,85 @@ const PageFive = () => {
 
   return (
     <div className="badge_form">
-      <div className="input-wrapper">
-        {' '}
+      <div className="input-wrapper mb-0">
+        {" "}
         <h4>Diversity Access Tickets</h4>
-        <label htmlFor="accessTickets">
+        <label className="text-sm" htmlFor="accessTickets">
           <input
             type="checkbox"
-            name="accessTickets"
+            name="DATIP"
             id="accessTickets"
-            {...register('accessTickets', { required: true })}
+            {...register("DATIP", { required: true })}
             required
-          />{' '}
+          />{" "}
           &nbsp;This event commits to the Diversity Access Tickets.
-        </label>{' '}
+        </label>{" "}
         <br />
-        <button
-          type="button"
-          className="reference"
-          onClick={(e) => {
-            e.preventDefault();
-            setShowLink(!showLink);
-          }}
-        >
-          References
-          {showLink ? (
-            <span id="reft">
-              <img
-                src={carretDown}
-                width={35}
-                height={35}
-                alt="carret-icon"
-                className="carret"
-              />
-            </span>
-          ) : (
-            <span id="reft">
-              <img
-                src={carretRight}
-                width={35}
-                height={35}
-                alt="carret-icon"
-                className="carret"
-              />
-            </span>
-          )}
-        </button>
         <br />
-        {showLink && (
-          <div>
-            <a href="https://chaoss.community/metrics-for-event-organizers/">
-              CHAOSS Metric Document
-            </a>
-          </div>
-        )}
+        <div>
+          <a
+            className="ev-link"
+            href="https://chaoss.community/kb/metric-diversity-access-tickets/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Metric: Diversity Access Tickets
+          </a>
+        </div>
       </div>
 
       <div className="input-wrapper ">
         <label htmlFor="ticketType">
           How many different types of diversity access tickets are available for
-          the event?<span>*</span>
-        </label>{' '}
+          the event?
+        </label>{" "}
         <br /> <br />
         <textarea
           className="input_text"
           id="ticketType"
           type="text"
-          name="ticketType"
+          name="DATIP1"
           placeholder="Enter your answer here"
-          {...register('ticketType', { required: true })}
+          {...register("DATIP1", { required: true })}
           rows="6"
           cols="75"
           required
-        />{' '}
+        />{" "}
         <br />
       </div>
       <div className="input-wrapper ">
         <label htmlFor="ticketCriteria">
           What are the criteria for qualifying for a diversity access ticket?
-          <span>*</span>
-        </label>{' '}
+        </label>{" "}
         <br /> <br />
         <textarea
           className="input_text"
           id="ticketCriteria"
           type="text"
-          name="ticketCriteria"
+          name="DATIP2"
           placeholder="Enter your answer here"
-          {...register('ticketCriteria', { required: true })}
+          {...register("DATIP2", { required: true })}
           rows="6"
           cols="75"
           required
-        />{' '}
+        />{" "}
         <br />
       </div>
       <div className="input-wrapper ">
         <label htmlFor="ticketLink">
-          Provide link for the Event Code of Conduct<span>*</span>
-        </label>{' '}
+          Provide a link to the page containing information about Diversity
+          Access Tickets.
+        </label>{" "}
         <br /> <br />
         <input
           type="text"
           placeholder="Enter your answer here"
           className="input_text"
           id="ticketLink"
-          name="ticketLink"
-          {...register('ticketLink', { required: true })}
+          name="DATIP3"
+          {...register("DATIP3", { required: true })}
           required
-        />{' '}
+        />{" "}
         <br />
       </div>
 

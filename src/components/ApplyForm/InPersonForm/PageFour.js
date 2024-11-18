@@ -1,16 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // import { useForm } from 'react-hook-form';
-import '../applyform.scss';
+import "../applyform.scss";
 // import { useNavigate } from 'react-router-dom';
-import '../../../assets/styles/global.scss';
-import { useFormContext } from 'react-hook-form';
-import { carretDown, carretRight } from '../../../assets/images';
+import "../../../assets/styles/global.scss";
+import { useFormContext } from "react-hook-form";
 
-import { useState } from 'react';
 const PageFour = () => {
   const { register } = useFormContext();
-  const [showLink, setShowLink] = useState(false);
 
   // const objectStyle = {
   //   color: 'blue',
@@ -25,78 +22,40 @@ const PageFour = () => {
 
   return (
     <div className="badge_form">
-      <div className="input-wrapper">
-        {' '}
+      <div className="input-wrapper mb-0">
+        {" "}
         <h4>Code of Conduct at Event</h4>
-        <label htmlFor="eventCode">
+        <label className="text-sm" htmlFor="eventCode">
           <input
             type="checkbox"
-            name="eventCode"
+            name="COCIP"
             id="eventCode"
-            {...register('eventCode', { required: true })}
-          />{' '}
+            {...register("COCIP", { required: true })}
+          />{" "}
           &nbsp; This event commits to the Code of Conduct at Event.
-        </label>{' '}
+        </label>{" "}
         <br />
-        <button
-          type="button"
-          className="reference"
-          onClick={(e) => {
-            e.preventDefault();
-            setShowLink(!showLink);
-          }}
-        >
-          References
-          {showLink ? (
-            <span id="reft">
-              <img
-                src={carretDown}
-                width={35}
-                height={35}
-                alt="carret-icon"
-                className="carret"
-              />
-            </span>
-          ) : (
-            <span id="reft">
-              <img
-                src={carretRight}
-                width={35}
-                height={35}
-                alt="carret-icon"
-                className="carret"
-              />
-            </span>
-          )}
-        </button>
         <br />
-        {showLink && (
-          <div>
-            <a href="https://chaoss.community/metrics-for-event-organizers/">
-              CHAOSS Metric Document
-            </a>
-            <br />
-            <a href="https://chaoss.community/metrics-for-event-organizers/">
-              CHAOSS Metric Document
-            </a>
-            <br />
-            <a href="https://chaoss.community/metrics-for-event-organizers/">
-              CHAOSS Metric Document
-            </a>
-          </div>
-        )}
+        <div>
+          <a
+            className="ev-link"
+            href="https://chaoss.community/kb/metric-code-of-conduct-at-event/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Metric: Code of Conduct at Event
+          </a>
+        </div>
       </div>
       <div className="radio-input">
-        <p>
-          Is the code of conduct posted at Event venue?<span>*</span>
-        </p>
+        <p>Is the code of conduct posted at Event venue?</p>
         <label htmlFor="codeposted">
           <input
             type="radio"
-            value="codeposted"
+            value="Yes"
             id="codeposted"
             name="codeposted"
-            {...register('codePosted', { required: true || false })}
+            {...register("COCIP1", { required: true || false })}
             className="radio-input"
           />
           Yes
@@ -105,10 +64,10 @@ const PageFour = () => {
         <label htmlFor="codenotposted">
           <input
             type="radio"
-            value="codenotposted"
+            value="No"
             id="codenotposted"
             name="codenotposted"
-            {...register('codePosted', { required: true || false })}
+            {...register("COCIP1", { required: true || false })}
             className="radio-input"
           />
           No
@@ -116,17 +75,17 @@ const PageFour = () => {
       </div>
       <div className="input-wrapper ">
         <label htmlFor="conductlink">
-          Provide link for the Event Code of Conduct<span>*</span>
-        </label>{' '}
+          Provide link for the Event Code of Conduct
+        </label>{" "}
         <br /> <br />
         <input
           type="text"
           placeholder="Enter your answer here"
           className="input_text"
           id="conductlink"
-          name="conductlink"
-          {...register('conductLink', { required: true })}
-        />{' '}
+          name="COCIP2"
+          {...register("COCIP2", { required: true })}
+        />{" "}
         <br />
       </div>
 
